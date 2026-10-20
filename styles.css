@@ -227,7 +227,7 @@ footer { padding: 28px 0; text-align: center; color: var(--muted); font-size: 14
   .about-card { padding: 28px 22px; }
 }
 
-/* ---------- Home page palette (no orange) ---------- */
+/* ---------- Home hero palette (no orange, hero only) ---------- */
 body.home {
   --h-bg: #121316;      /* hero + contact */
   --h-soft: #f5f5f7;    /* light sections */
@@ -243,13 +243,6 @@ body.home {
 .home .doodle.d2 { fill: #ffffff; opacity: .5; }
 .home .portrait .blob { background: var(--h-accent); opacity: .9; }
 .home .portrait .initials { color: var(--h-bg); }
-.home .section-head h2 span { color: var(--h-accent); }
-.home .work { background: var(--h-soft); }
-.home .work-blob { display: none; }
-.home .case .thumb { background: #ffffff; padding: 24px; }
-.home .case .num { color: var(--h-accent); }
-.home .contact { background: var(--h-bg); }
-.home .contact .btn { background: var(--h-accent); color: var(--white); }
 .contact .email-big { display: inline-block; font-family: var(--head); font-weight: 700; font-size: clamp(22px, 3vw, 32px); color: var(--white); margin-bottom: 28px; text-decoration: none; border-bottom: 2px solid rgba(255,255,255,.35); }
 .contact .email-big:hover { border-color: var(--white); }
 
