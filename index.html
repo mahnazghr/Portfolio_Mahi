@@ -7,22 +7,29 @@
   <meta name="description" content="Portfolio of Mahnaz Gharehbaghi (Mahi), UI/UX designer: case studies in user research, user flows, wireframes and design systems.">
   <meta property="og:title" content="Mahnaz Gharehbaghi · UI/UX Designer">
   <meta property="og:description" content="UI/UX case studies by Mahi.">
-  <meta property="og:image" content="/assets/hot2go/card.webp">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='30' fill='%23ff7e0c'/><text x='32' y='43' font-size='30' text-anchor='middle' font-family='Arial' font-weight='700' fill='white'>M</text></svg>">
+  <meta property="og:image" content="/assets/hot2go/thumb.webp">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='30' fill='%23121316'/><text x='32' y='43' font-size='30' text-anchor='middle' font-family='Arial' font-weight='700' fill='white'>M</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
 </head>
-<body>
+<body class="home">
 
 <nav class="nav">
   <div class="wrap">
-    <a href="/" class="logo">Mahi<span>.</span></a>
+    <a href="/" class="logo full">Mahnaz Gharehbaghi<span>.</span></a>
     <ul>
       <li><a href="#work">Work</a></li>
       <li class="hide-sm"><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li class="nav-contact">
+        <button type="button" aria-expanded="false" aria-controls="contact-pop">Contact</button>
+        <div class="contact-pop" id="contact-pop" role="dialog" aria-label="Contact">
+          <small>Email me at</small>
+          <a href="mailto:Mah.gharehbaghi@gmail.com">Mah.gharehbaghi@gmail.com</a>
+          <button type="button" class="copy" data-email="Mah.gharehbaghi@gmail.com">Copy email</button>
+        </div>
+      </li>
     </ul>
   </div>
 </nav>
@@ -44,7 +51,7 @@
       <p class="lead reveal delay-2">I turn messy problems into clear, friendly interfaces — from research and user flows to wireframes, style guides and polished UI.</p>
       <div class="actions reveal delay-2">
         <a class="btn" href="#work">See my work →</a>
-        <a class="btn ghost" href="#contact">Get in touch</a>
+        <a class="btn ghost" href="mailto:Mah.gharehbaghi@gmail.com">Get in touch</a>
       </div>
     </div>
     <div class="portrait reveal delay-1" aria-hidden="true">
@@ -87,13 +94,12 @@
   <div class="work-blob" aria-hidden="true"></div>
   <div class="wrap">
     <div class="section-head reveal">
-      <h2>Selected <span>case studies</span></h2>
-      <p>Click a project to read the full story — the problem, the process and the final design.</p>
+      <h2>My Recent Work</h2>
     </div>
 
     <div class="cases">
       <a class="case reveal" href="/case-studies/hot2go">
-        <div class="thumb"><img src="/assets/hot2go/card.webp" alt="HOT2GO food delivery website shown on two laptops" width="960" height="492"></div>
+        <div class="thumb"><img src="/assets/hot2go/thumb.webp" alt="HOT2GO food delivery website home screen" width="770" height="438"></div>
         <div class="body">
           <div class="num">CASE STUDY 01</div>
           <h3>HOT2GO — Food Delivery Website</h3>
@@ -121,7 +127,8 @@
   <div class="wrap reveal">
     <h2>Let's create something together</h2>
     <p>Open to new projects, collaborations and full-time roles.</p>
-    <a class="btn" href="#work">Browse my work →</a>
+    <a class="email-big" href="mailto:Mah.gharehbaghi@gmail.com">Mah.gharehbaghi@gmail.com</a><br>
+    <a class="btn" href="mailto:Mah.gharehbaghi@gmail.com">Send me an email →</a>
   </div>
 </section>
 
