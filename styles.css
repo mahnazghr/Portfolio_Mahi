@@ -234,15 +234,18 @@ body.home {
   --h-accent: #f40019;  /* brand red */
   --h-blob: #2b3037;
 }
-.home .hero { background: var(--h-bg); }
+.home .hero { background: var(--white); color: var(--ink); }
 .home .hero h1 em { color: var(--h-accent); }
-.home .eyebrow { background: rgba(255,255,255,.1); }
+.home .hero p.lead { color: var(--ink-2); }
+.home .eyebrow { background: #f1f2f3; color: var(--ink); }
 .home .hero .btn { background: var(--h-accent); color: var(--white); }
-.home .hero .btn.ghost { background: transparent; color: var(--white); }
-.home .doodle.d1 { stroke: #ffffff; opacity: .5; }
-.home .doodle.d2 { fill: #ffffff; opacity: .5; }
+.home .hero .btn.ghost { background: transparent; color: var(--ink); border-color: var(--ink); }
+.home .hero .btn.ghost:hover { background: #f1f2f3; }
+.home .doodle.d1 { stroke: var(--ink); opacity: .35; }
+.home .doodle.d2 { fill: var(--ink); opacity: .35; }
 .home .portrait .blob { background: var(--h-accent); opacity: .9; }
-.home .portrait .initials { color: var(--h-bg); }
+.home .portrait .initials { color: var(--ink); }
+.home .wave { display: none; }
 .contact .email-big { display: inline-block; font-family: var(--head); font-weight: 700; font-size: clamp(22px, 3vw, 32px); color: var(--white); margin-bottom: 28px; text-decoration: none; border-bottom: 2px solid rgba(255,255,255,.35); }
 .contact .email-big:hover { border-color: var(--white); }
 
