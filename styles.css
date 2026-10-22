@@ -364,3 +364,21 @@ body.home {
   .side { padding-top: 0; }
   .p2 { transform: rotate(2deg); }
 }
+
+/* Stacked collage: one piece per row */
+.board { grid-template-columns: 1fr; max-width: 780px; margin-inline: auto; gap: 72px; }
+.p1b { transform: rotate(2deg); }
+.p1b:hover { transform: rotate(0deg) translateY(-6px); }
+.p1b .label { margin-left: 4%; transform: rotate(-1.5deg); }
+.p1b .sticker { right: auto; left: -18px; transform: rotate(-12deg); background: var(--red); }
+.ph-blank {
+  aspect-ratio: 960 / 492; display: grid; place-items: center;
+  background: repeating-linear-gradient(-45deg, #ece7dc 0 14px, #e3ddd0 14px 28px);
+}
+.ph-blank span { font-family: "Caveat", cursive; font-size: clamp(34px, 5vw, 54px); color: var(--ink); background: #fffdf7; padding: 4px 22px; transform: rotate(-3deg); box-shadow: 0 6px 12px rgba(18,19,22,.12); }
+.extras { display: flex; justify-content: center; align-items: center; gap: 30px; flex-wrap: wrap; margin-top: -20px; }
+@media (max-width: 860px) {
+  .board { gap: 56px; }
+  .p1b { transform: rotate(1deg); }
+  .p1b .sticker { left: -6px; }
+}
