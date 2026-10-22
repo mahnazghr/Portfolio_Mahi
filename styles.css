@@ -382,3 +382,61 @@ body.home {
   .p1b { transform: rotate(1deg); }
   .p1b .sticker { left: -6px; }
 }
+
+/* ---------- About: cut-out collage ---------- */
+.about-collage {
+  background-color: #f8f5ee;
+  background-image:
+    linear-gradient(rgba(18,19,22,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(18,19,22,.045) 1px, transparent 1px);
+  background-size: 28px 28px;
+  border-bottom: 1px dashed rgba(18,19,22,.18);
+}
+.about-board { display: grid; grid-template-columns: 1.15fr 1fr; gap: 56px; align-items: start; max-width: 1080px; margin-inline: auto; }
+.who { position: relative; transform: rotate(-1.5deg); transition: transform .35s ease; filter: drop-shadow(0 16px 20px rgba(18,19,22,.14)); }
+.who:hover { transform: rotate(0deg) translateY(-4px); }
+.who-paper {
+  background: #fffdf7; padding: 44px 40px 48px;
+  background-image: repeating-linear-gradient(transparent 0 31px, rgba(18,19,22,.06) 31px 32px);
+}
+.who-paper h3 { font-family: "Anton", var(--head); font-weight: 400; font-size: clamp(38px, 4.5vw, 54px); letter-spacing: .02em; text-transform: uppercase; margin: 6px 0 14px; }
+.who-paper p { font-family: "Special Elite", monospace; font-size: 15.5px; line-height: 1.85; color: var(--ink-2); margin: 0 0 14px; }
+.who .tape.t1 { top: -14px; left: 30px; }
+.who .tape.t2 { top: -12px; right: 40px; left: auto; }
+
+.dymo-row { list-style: none; display: flex; flex-wrap: wrap; gap: 12px 10px; padding: 0 10px; margin: 26px 0 0; }
+.dymo-row li {
+  font-family: "Special Elite", monospace; text-transform: uppercase; letter-spacing: .12em; font-size: 13px;
+  background: var(--ink); color: #fff; padding: 7px 12px 6px; border-radius: 3px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.18), 0 3px 6px rgba(18,19,22,.18);
+}
+.dymo-row li:nth-child(3n+1) { transform: rotate(-2deg); }
+.dymo-row li:nth-child(3n+2) { transform: rotate(1.5deg); background: var(--red); }
+.dymo-row li:nth-child(3n) { transform: rotate(-.5deg); }
+
+.tags-board { display: grid; grid-template-columns: 1fr 1fr; gap: 30px 26px; padding-top: 18px; }
+.tagnote {
+  position: relative; min-height: 160px; padding: 34px 22px 24px; display: flex; flex-direction: column; gap: 8px;
+  filter: drop-shadow(0 12px 14px rgba(18,19,22,.14)); transition: transform .3s ease;
+  clip-path: polygon(0 2%, 98% 0, 100% 97%, 2% 100%);
+}
+.tagnote b { font-family: "Anton", var(--head); font-weight: 400; font-size: 30px; letter-spacing: .03em; text-transform: uppercase; line-height: 1; }
+.tagnote span:not(.pin) { font-family: "Special Elite", monospace; font-size: 15px; line-height: 1.6; }
+.tagnote .pin { position: absolute; top: 12px; left: 50%; width: 14px; height: 14px; margin-left: -7px; border-radius: 50%; background: var(--red); box-shadow: 0 2px 3px rgba(0,0,0,.3), inset -2px -2px 0 rgba(0,0,0,.18); }
+.n1 { background: #fffdf7; transform: rotate(-3deg); }
+.n2 { background: var(--ink); color: #fff; transform: rotate(2deg) translateY(14px); }
+.n2 .pin { background: #fff; }
+.n3 { background: #e7dcc2; transform: rotate(1.5deg); }
+.n4 { background: var(--red); color: #fff; transform: rotate(-2deg) translateY(14px); }
+.n4 .pin { background: var(--ink); }
+.tagnote:hover { transform: rotate(0deg) translateY(-4px); }
+
+@media (max-width: 860px) {
+  .about-board { grid-template-columns: 1fr; gap: 44px; }
+  .who-paper { padding: 34px 22px 38px; }
+  .who { transform: rotate(-1deg); }
+  .tags-board { gap: 22px 16px; }
+  .tagnote { min-height: 140px; padding: 30px 16px 20px; }
+  .tagnote b { font-size: 24px; }
+  .tagnote span:not(.pin) { font-size: 13.5px; }
+}
