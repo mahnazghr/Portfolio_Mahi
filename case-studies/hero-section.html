@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hero Section in HTML &amp; CSS · Mahi</title>
+  <meta name="description" content="Code practice by Mahnaz Gharehbaghi: a responsive hero section built from scratch with plain HTML and CSS.">
+  <meta property="og:image" content="/assets/hero-section/card.webp?v=11">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='30' fill='%23121316'/><text x='32' y='43' font-size='30' text-anchor='middle' font-family='Arial' font-weight='700' fill='white'>M</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css?v=11">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="/" class="logo full">Mahnaz Gharehbaghi<span>.</span></a>
+    <ul>
+      <li><a href="/#work">Work</a></li>
+      <li class="hide-sm"><a href="/#about">About</a></li>
+      <li class="nav-contact">
+        <button type="button" aria-expanded="false" aria-controls="contact-pop">Contact</button>
+        <div class="contact-pop" id="contact-pop" role="dialog" aria-label="Contact">
+          <small>Email me at</small>
+          <a href="mailto:Mah.gharehbaghi@gmail.com">Mah.gharehbaghi@gmail.com</a>
+          <button type="button" class="copy" data-email="Mah.gharehbaghi@gmail.com">Copy email</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<header class="cs-hero">
+  <div class="wrap">
+    <a class="back" href="/#work">← Back to all work</a>
+    <h1 class="reveal">From design to code: <span>Hero Section</span> in HTML &amp; CSS</h1>
+    <p class="reveal delay-1">My first step from designing in Figma to building in the browser. I took the hero of my own portfolio and rebuilt it from scratch with plain HTML and CSS, without frameworks or page builders. The goal: understand how a layout really works, and make it look good on every screen size.</p>
+    <div class="cs-meta reveal delay-2">
+      <div><b>Type</b><span>Code practice / learning project</span></div>
+      <div><b>Built with</b><span>HTML &amp; CSS</span></div>
+      <div><b>Device</b><span>Responsive (desktop, tablet, mobile)</span></div>
+      <div><b>Year</b><span>2026</span></div>
+    </div>
+    <div class="cs-links reveal delay-2">
+      <a class="btn" href="/demos/hero-section/" target="_blank" rel="noopener">View live demo ↗</a>
+      <a class="btn line" href="https://github.com/mahnazghr/hero-section-html-css" target="_blank" rel="noopener">See the code on GitHub ↗</a>
+    </div>
+  </div>
+</header>
+
+<main class="code-study">
+  <section class="wrap code-shots reveal">
+    <figure class="shot-desk">
+      <img src="/assets/hero-section/desktop.webp?v=11" alt="The hero section on a desktop screen: headline on the left, portrait with a red arch shape on the right" width="1440" height="860" loading="eager" decoding="async">
+      <figcaption>Desktop: two columns with CSS Grid</figcaption>
+    </figure>
+    <figure class="shot-mob">
+      <img src="/assets/hero-section/mobile.webp?v=11" alt="The same hero section on a phone: the portrait moves above the headline in one column" width="780" height="2046" loading="lazy" decoding="async">
+      <figcaption>Mobile: one column, photo first</figcaption>
+    </figure>
+  </section>
+
+  <section class="wrap code-learn">
+    <h2 class="reveal">What I practiced</h2>
+    <div class="learn-grid">
+      <div class="learn reveal"><b>Semantic HTML</b><p>A clear structure with <code>header</code>, <code>nav</code>, <code>main</code>, <code>section</code> and <code>figure</code>, and only one <code>h1</code> per page.</p></div>
+      <div class="learn reveal"><b>Flexbox</b><p>The navigation bar: logo on the left, links on the right, everything centered vertically.</p></div>
+      <div class="learn reveal"><b>CSS Grid</b><p>The two-column hero layout, with the text column a little wider than the photo.</p></div>
+      <div class="learn reveal"><b>CSS variables</b><p>Colors, fonts and the arch radius are defined once in <code>:root</code> and reused everywhere.</p></div>
+      <div class="learn reveal"><b>Fluid typography</b><p>The headline grows with the screen using <code>clamp()</code>, from 40px on phones to 68px on desktop.</p></div>
+      <div class="learn reveal"><b>Responsive design</b><p>Two media queries (860px and 480px) switch to one column, move the photo up and simplify the navigation.</p></div>
+      <div class="learn reveal"><b>Shapes without extra HTML</b><p>The red arch behind the photo is a <code>::before</code> pseudo-element placed with <code>position</code> and <code>z-index</code>.</p></div>
+      <div class="learn reveal"><b>Accessibility</b><p>Alt text, an <code>aria-label</code> for the navigation and visible <code>:focus-visible</code> styles for keyboard users.</p></div>
+    </div>
+  </section>
+
+  <section class="wrap code-snippet reveal">
+    <h2>A look at the code</h2>
+    <p>The core of the layout: one grid rule for desktop, one media query for small screens.</p>
+<pre><code><span class="c">/* Two columns: text wider than photo */</span>
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+<span class="c">/* Headline grows with the screen */</span>
+.hero-text h1 {
+  font-size: clamp(40px, 6vw, 68px);
+}
+
+<span class="c">/* Phones: one column, photo on top */</span>
+@media (max-width: 860px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-photo { order: -1; max-width: 280px; }
+}</code></pre>
+  </section>
+
+  <section class="wrap code-next reveal">
+    <h2>What's next</h2>
+    <p>Next, I want to build complete pages from my own Figma designs, starting with the home page of my HOT2GO case study, and learn the basics of JavaScript and a CMS like WordPress.</p>
+  </section>
+</main>
+
+<section class="cs-next">
+  <div class="wrap reveal">
+    <h2>Thanks for reading!</h2>
+    <a class="btn" href="/#work">← Back to all work</a>
+  </div>
+</section>
+
+<footer>© <span id="y"></span> Mahnaz Gharehbaghi · Designed in Figma, built with ♥</footer>
+<script src="/main.js?v=11"></script>
+</body>
+</html>

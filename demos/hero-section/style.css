@@ -1,0 +1,215 @@
+/* =========================================================
+   1. VARIABLES (custom properties)
+   Define colors and sizes once, reuse them everywhere.
+   ========================================================= */
+:root {
+  --color-text: #121316;
+  --color-muted: #464646;
+  --color-accent: #f40019;   /* brand red */
+  --color-bg: #ffffff;
+  --color-line: #ededed;
+
+  --font-main: "Inter", Arial, sans-serif;
+  --max-width: 1200px;
+  --radius-arch: 200px 200px 24px 24px;
+}
+
+/* =========================================================
+   2. RESET + BASE STYLES
+   ========================================================= */
+
+/* box-sizing: padding and border are included in the width */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;   /* images never overflow their container */
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Reusable wrapper that centers content and limits its width */
+.container {
+  width: min(var(--max-width), 100% - 32px);
+  margin-inline: auto;   /* centers horizontally */
+}
+
+/* =========================================================
+   3. HEADER + NAVIGATION (Flexbox)
+   ========================================================= */
+.site-header {
+  border-bottom: 1px solid var(--color-line);
+}
+
+.header-inner {
+  display: flex;                    /* puts children in a row */
+  justify-content: space-between;   /* logo left, nav right */
+  align-items: center;              /* vertical centering */
+  height: 68px;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.logo .dot {
+  color: var(--color-accent);
+}
+
+.nav-list {
+  display: flex;
+  gap: 28px;
+  list-style: none;   /* removes bullet points */
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list a {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--color-muted);
+  transition: color 0.2s ease;   /* smooth color change */
+}
+
+/* :hover = when the mouse is over the link */
+.nav-list a:hover {
+  color: var(--color-accent);
+}
+
+/* =========================================================
+   4. HERO SECTION (CSS Grid)
+   ========================================================= */
+.hero {
+  padding: 96px 0 120px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;   /* two columns: text wider than photo */
+  gap: 48px;
+  align-items: center;
+}
+
+.hero-text h1 {
+  font-size: clamp(40px, 6vw, 68px);   /* grows with screen, min 40 / max 68 */
+  line-height: 1.15;
+  margin: 0;
+}
+
+/* em is italic by default; we make it red instead */
+.highlight {
+  font-style: normal;
+  color: var(--color-accent);
+}
+
+.lead {
+  font-size: 20px;
+  color: var(--color-muted);
+  max-width: 540px;
+  margin: 20px 0 32px;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  background-color: var(--color-accent);
+  color: #fff;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 999px;   /* pill shape */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);   /* lifts slightly */
+  box-shadow: 0 8px 20px rgba(244, 0, 25, 0.25);
+}
+
+/* :focus-visible = keyboard users can see where they are */
+.btn:focus-visible,
+.nav-list a:focus-visible {
+  outline: 3px solid var(--color-text);
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   5. PHOTO WITH ARCH SHAPE + RED BLOCK (position)
+   ========================================================= */
+.hero-photo {
+  position: relative;   /* lets ::before be positioned inside it */
+  margin: 0;
+  max-width: 400px;
+  justify-self: center;
+}
+
+/* ::before creates the red shape behind the photo, no extra HTML */
+.hero-photo::before {
+  content: "";
+  position: absolute;
+  inset: 22px -18px -18px 22px;   /* top right bottom left */
+  background-color: var(--color-accent);
+  border-radius: var(--radius-arch);
+  z-index: 0;
+}
+
+.hero-photo img {
+  position: relative;
+  z-index: 1;                     /* photo sits on top of the red shape */
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-arch);
+}
+
+/* =========================================================
+   6. RESPONSIVE: phones and small tablets
+   Styles inside apply only when the screen is 860px or narrower.
+   ========================================================= */
+@media (max-width: 860px) {
+  .hero {
+    padding: 48px 0 80px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;   /* one column */
+  }
+
+  .hero-photo {
+    order: -1;          /* photo moves above the text */
+    max-width: 280px;
+  }
+
+  .lead {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-list {
+    gap: 16px;
+  }
+
+  .logo {
+    font-size: 17px;
+  }
+
+  /* hide "About" on very small screens to save space */
+  .nav-list li:nth-child(2) {
+    display: none;
+  }
+}

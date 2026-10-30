@@ -4,7 +4,9 @@ Personal UI/UX portfolio of Mahnaz Gharehbaghi — plain HTML/CSS/JS, deployed o
 
 - `index.html` – home page (hero, about, case studies, contact)
 - `case-studies/hot2go.html` – HOT2GO case study (sections exported from Figma as WebP)
-- `case-studies/coming-soon.html` – placeholder for case study 02
+- `case-studies/hero-section.html` – code practice: hero section built with plain HTML & CSS
+- `demos/hero-section/` – live demo of that hero section (copy of github.com/mahnazghr/hero-section-html-css, asset paths made absolute)
+- `case-studies/coming-soon.html` – unused placeholder for a future case study
 - `styles.css`, `main.js` – styles and scroll animations
 
 ## Add a new case study

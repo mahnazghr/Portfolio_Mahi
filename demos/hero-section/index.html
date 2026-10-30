@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!-- lang tells browsers and screen readers the page language -->
+<html lang="en">
+<head>
+  <!-- Character set: lets the page show any letter or symbol -->
+  <meta charset="UTF-8">
+  <!-- Makes the page scale correctly on phones -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahnaz Gharehbaghi · Hero Section</title>
+  <meta name="description" content="Hero section of Mahnaz Gharehbaghi's portfolio, built with plain HTML and CSS.">
+
+  <!-- Google Fonts (optional): Inter for all text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Our own stylesheet (kept in a separate file) -->
+  <link rel="stylesheet" href="/demos/hero-section/style.css">
+</head>
+<body>
+
+  <!-- HEADER: site name + navigation -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo">Mahnaz Gharehbaghi<span class="dot">.</span></a>
+
+      <!-- nav = a group of navigation links -->
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="#work">Work</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="mailto:Mah.gharehbaghi@gmail.com">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN: the main content of the page -->
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+
+        <!-- Left column: text -->
+        <div class="hero-text">
+          <!-- Only ONE h1 per page: the most important heading -->
+          <h1 id="hero-title">
+            Hi, I'm Mahnaz.<br>
+            I design <em class="highlight">simple</em> digital experiences.
+          </h1>
+
+          <p class="lead">
+            I turn messy problems into clear, friendly interfaces, from research
+            and user flows to wireframes, style guides and polished UI.
+          </p>
+
+          <a href="#work" class="btn">See my work →</a>
+        </div>
+
+        <!-- Right column: photo. figure groups an image with its frame -->
+        <figure class="hero-photo">
+          <!-- alt text describes the image for screen readers -->
+          <img src="/demos/hero-section/images/mahnaz.webp"
+               alt="Portrait of Mahnaz Gharehbaghi"
+               width="586" height="781">
+        </figure>
+
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>
